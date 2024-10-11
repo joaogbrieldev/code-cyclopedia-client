@@ -1,5 +1,7 @@
 Coming soon...
 
+Feature working now: `dashboard page`
+
 ## Getting Started
 
 First, run the development server:
