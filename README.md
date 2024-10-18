@@ -1,6 +1,6 @@
 Coming soon...
 
-Feature working now: `dashboard page`
+Feature working now: `dashboard page` and `auth page`
 
 ## Getting Started
 
