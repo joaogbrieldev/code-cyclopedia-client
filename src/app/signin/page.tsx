@@ -19,7 +19,6 @@ export default function Signup() {
     const user: UserDto = {
       email,
       password,
-      userId: '02038160-106b-4327-9290-3738ae91de94'
     };
 
     try {
