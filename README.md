@@ -1,6 +1,6 @@
 Coming soon...
 
-Feature working now: `auth page`
+Feature working now: `auth page style`
 
 ## Getting Started
 
