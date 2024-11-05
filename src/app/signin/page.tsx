@@ -7,9 +7,13 @@ import { useRouter } from 'next/navigation';
 import { setCookie } from 'nookies';
 import { FormEvent, useState } from "react";
 
-export default function Signup() {
+type SigninProps =  {
+  isOpen: boolean
+}
+
+export default function Signin({isOpen}: SigninProps) {
+  if (!isOpen) return null
   const router = useRouter();
-  const [isOpen, setOpen] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -22,7 +26,6 @@ export default function Signup() {
     };
 
     try {
-      console.log(user)
       const response = await userLogin(user);
       setCookie(null, 'authToken', response.token, {
         maxAge: 24 * 60 * 60,
@@ -66,7 +69,7 @@ export default function Signup() {
         Continuar
       </button>
       
-      <Link href={"#"} className="text-[#81259d] mt-4">Ainda não tenho conta</Link>
+      <Link href={"#signup"} className="text-[#81259d] mt-4">Ainda não tenho conta</Link>
     </form>
   );
 }
