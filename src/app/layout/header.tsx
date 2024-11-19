@@ -10,7 +10,6 @@ import Signin from "../signin/page";
 export default function Header() {
   const [isOpen, setOpen] = useState(false);
   const token = nookies.get();
-  console.log(token);
   let decodedToken = jwt.decode(token.authToken);
   if (!decodedToken) decodedToken = "user";
 
@@ -24,15 +23,15 @@ export default function Header() {
         <Image src={logo} alt="logo" />
         <nav>
           <ul>
-            <li className=" font-medium text-base">
+            {/* <li className=" font-medium text-base">
               {" "}
               <a className=" font-medium text-base" href="/about">
                 About this project
               </a>
-            </li>
+            </li> */}
           </ul>
         </nav>
-        {!token ? (
+        {!token.authToken ? (
           <button className=" font-medium text-base" onClick={openModal}>
             Sign in
           </button>
