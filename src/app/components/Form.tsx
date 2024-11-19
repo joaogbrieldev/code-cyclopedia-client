@@ -1,44 +1,6 @@
-"use client";
-
-import { userLogin } from "@/application/factory/user-factory";
-import { UserDto } from "@/domain/user/user.dto";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { setCookie } from "nookies";
-import { FormEvent, useState } from "react";
 
-type SigninProps = {
-  isOpen: boolean;
-};
-
-export default function Signin({ isOpen }: SigninProps) {
-  const router = useRouter();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  if (!isOpen) return null;
-
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-
-    const user: UserDto = {
-      email,
-      password,
-    };
-
-    try {
-      const response = await userLogin(user);
-      setCookie(null, "authToken", response.token, {
-        maxAge: 24 * 60 * 60,
-        path: "/",
-      });
-
-      router.push("/dashboard");
-    } catch (error) {
-      console.error("Login failed:", error);
-      alert("Erro no login. Verifique suas credenciais.");
-    }
-  }
-
+export default function Form({ handleSubmit, value }) {
   return (
     <form
       onSubmit={handleSubmit}
