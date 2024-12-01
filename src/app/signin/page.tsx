@@ -1,7 +1,7 @@
 "use client";
 
 import { userLogin } from "@/application/factory/user-factory";
-import { UserDto } from "@/domain/user/user.dto";
+import { UserLoginDto } from "@/domain/user/user.dto";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { setCookie } from "nookies";
@@ -20,7 +20,7 @@ export default function Signin({ isOpen }: SigninProps) {
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    const user: UserDto = {
+    const user: UserLoginDto = {
       email,
       password,
     };
