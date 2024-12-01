@@ -22,14 +22,7 @@ export default function Header() {
       <header className=" flex justify-between w-full items-center pt-[30px] pb-[30px] px-[10%]">
         <Image src={logo} alt="logo" />
         <nav>
-          <ul>
-            {/* <li className=" font-medium text-base">
-              {" "}
-              <a className=" font-medium text-base" href="/about">
-                About this project
-              </a>
-            </li> */}
-          </ul>
+          <ul></ul>
         </nav>
         {!token.authToken ? (
           <button className=" font-medium text-base" onClick={openModal}>

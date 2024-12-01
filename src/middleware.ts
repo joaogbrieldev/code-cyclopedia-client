@@ -2,8 +2,8 @@ import jwt, { JwtPayload } from "jsonwebtoken";
 import { cookies } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
 
-const protectedRoutes = ["/"];
-const publicRoutes = ["/signin"];
+const protectedRoutes = ["/", "/dashboard"];
+const publicRoutes = ["/signin", "/signup"];
 
 export type tokenType = string | null | JwtPayload;
 export type sessionType = {
